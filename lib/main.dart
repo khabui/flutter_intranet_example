@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'models/api_provider.dart';
-import 'models/random_user_api.dart';
+import 'contacts_screen.dart';
+import 'profile_screen.dart';
 import 'resources/colors.dart';
-import 'resources/icons.dart';
-import 'resources/text_theme.dart';
-import 'widgets/user_bottom_navigation.dart';
-import 'widgets/user_card.dart';
+import 'resources/values.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,62 +23,34 @@ class MyApp extends StatelessWidget {
         primarySwatch: AppColors.swatchColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const HomePage(title: 'Contacts'),
+      initialRoute: Routes.root,
+      onGenerateRoute: (settings) => _getRoute(settings),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
-  final String title;
-
-  const HomePage({Key key, this.title}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final _users = UserApiProvider().fetchUsers(
-      numbers: 10,
-    );
-
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        title: Text(
-          title,
-          style: textTheme(context).heading2.colorWhite,
+Route<dynamic> _getRoute(RouteSettings settings) {
+  switch (settings.name) {
+    case Routes.root:
+      return MaterialPageRoute(
+        settings: const RouteSettings(name: Routes.root),
+        builder: (_) => const ContactsScreen(title: 'Contacts'),
+      );
+    case Routes.profile:
+      final ProfileScreenArguments arguments =
+          settings.arguments as ProfileScreenArguments;
+      return MaterialPageRoute(
+        builder: (_) => ProfileScreen(
+          user: arguments.user,
         ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              AppIcons.menuIcon,
-              color: AppColors.whiteColor,
-            ),
-            onPressed: () {},
-          )
-        ],
-      ),
-      body: FutureBuilder(
-        future: _users,
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-          if (snapshot.hasData) {
-            return ListView.builder(
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              itemCount: snapshot.data.length as int,
-              itemBuilder: (BuildContext context, int index) {
-                final user = snapshot.data[index];
-                return UserCard(
-                  user: user is User ? user : null,
-                );
-              },
-            );
-          } else {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-        },
-      ),
-      bottomNavigationBar: const UserBottomNavigation(),
-    );
+      );
+//    case Routes.editProfile:
+//      final EditProfileScreenArguments arguments =
+//          settings.arguments as EditProfileScreenArguments;
+//      return MaterialPageRoute(
+//        builder: (_) => EditProfileScreen(user: arguments.user),
+//      );
+    default:
+      throw Exception('Route ${settings.name} is not defined');
   }
 }

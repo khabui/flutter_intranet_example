@@ -3,10 +3,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../models/random_user_api.dart';
-import '../profile_page.dart';
+import '../profile_screen.dart';
 import '../resources/colors.dart';
 import '../resources/icons.dart';
 import '../resources/text_theme.dart';
+import '../resources/values.dart';
 import 'horizontal_spacing.dart';
 
 class UserListTile extends StatelessWidget {
@@ -63,13 +64,9 @@ class UserListTile extends StatelessWidget {
       ),
       trailing: IconButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => ProfilePage(
-                user: user,
-              ),
-            ),
+          Navigator.of(context).pushNamed(
+            Routes.profile,
+            arguments: ProfileScreenArguments(user: user),
           );
         },
         icon: Icon(

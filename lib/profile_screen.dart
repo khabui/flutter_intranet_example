@@ -11,7 +11,7 @@ import 'resources/text_theme.dart';
 import 'widgets/info_button.dart';
 import 'widgets/vertical_spacing.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfileScreen extends StatelessWidget {
   final User user;
 
   Future<void> _mailTo(String email) async {
@@ -37,7 +37,7 @@ class ProfilePage extends StatelessWidget {
     }
   }
 
-  const ProfilePage({Key key, @required this.user}) : super(key: key);
+  const ProfileScreen({Key key, @required this.user}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -188,4 +188,10 @@ class ProfilePage extends StatelessWidget {
       ),
     );
   }
+}
+
+class ProfileScreenArguments {
+  final User user;
+
+  ProfileScreenArguments({this.user});
 }
