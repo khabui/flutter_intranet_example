@@ -10,28 +10,21 @@ class RandomUserApi {
   RandomUserApi({this.users, this.info});
 
   factory RandomUserApi.fromJson(Map<String, dynamic> json) {
-    if (json['results'] != null) {
-      final resultsObjJson = json['results'] as List;
-      final List<User> _results = resultsObjJson
-          .map((resultsJson) => User.fromJson(
-              resultsJson is Map<String, dynamic> ? resultsJson : null))
-          .toList();
-
-      return RandomUserApi(
-        users: _results,
-        info: Info.fromJson(json['info'] as Map<String, dynamic>),
-      );
-    } else {
-      return RandomUserApi(
-        info: json['info'] == null
-            ? null
-            : Info.fromJson(json['info'] as Map<String, dynamic>),
-      );
-    }
+    return RandomUserApi(
+      users: json['results'] == null
+          ? null
+          : (json['results'] as List)
+              ?.map((result) =>
+                  User.fromJson(result is Map<String, dynamic> ? result : null))
+              ?.toList(),
+      info: json['info'] == null
+          ? null
+          : Info.fromJson(json['info'] as Map<String, dynamic>),
+    );
   }
 
   Map<String, dynamic> toJson() => <String, dynamic>{
-        'results': users?.map((e) => e.toJson())?.toList(),
+        'results': users?.map((user) => user.toJson())?.toList(),
         'info': info,
       };
 
