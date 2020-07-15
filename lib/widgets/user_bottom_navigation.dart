@@ -23,9 +23,7 @@ class UserBottomNavigation extends StatelessWidget {
           ),
           title: Text(
             'Home',
-            style: TextStyle(
-              color: AppColors.whiteColor,
-            ),
+            style: textTheme(context).bodySmall.colorWhite,
           ),
         ),
         BottomNavigationBarItem(
@@ -51,9 +49,7 @@ class UserBottomNavigation extends StatelessWidget {
           ),
           title: Text(
             'Team',
-            style: TextStyle(
-              color: AppColors.whiteColor,
-            ),
+            style: textTheme(context).bodySmall.colorWhite,
           ),
         ),
         BottomNavigationBarItem(
@@ -66,9 +62,7 @@ class UserBottomNavigation extends StatelessWidget {
           ),
           title: Text(
             'Contact',
-            style: TextStyle(
-              color: AppColors.whiteColor,
-            ),
+            style: textTheme(context).bodySmall.colorWhite,
           ),
         ),
       ],
