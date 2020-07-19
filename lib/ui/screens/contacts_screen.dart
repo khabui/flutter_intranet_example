@@ -5,7 +5,6 @@ import '../../models/random_user_api.dart';
 import '../../resources/colors.dart';
 import '../../resources/icons.dart';
 import '../../resources/text_theme.dart';
-import '../widgets/user_bottom_navigation.dart';
 import '../widgets/user_card.dart';
 
 class ContactsScreen extends StatelessWidget {
@@ -58,7 +57,6 @@ class ContactsScreen extends StatelessWidget {
           }
         },
       ),
-      bottomNavigationBar: const UserBottomNavigation(),
     );
   }
 }

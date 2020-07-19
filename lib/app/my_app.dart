@@ -1,32 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../resources/colors.dart';
 import '../resources/values.dart';
 import '../ui/screens/contacts_screen.dart';
+import '../ui/screens/main_screen.dart';
 import '../ui/screens/profile_screen.dart';
+import '../ui/view_models/bottom_navigation_bar_provider.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Random User Generator',
-      theme: ThemeData(
-        canvasColor: AppColors.atollColor,
-        scaffoldBackgroundColor: AppColors.atollColor,
-        primaryColor: AppColors.atollColor,
-        primarySwatch: AppColors.swatchColor,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => BottomNavigationBarProvider(),
+        )
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Random User Generator',
+        theme: ThemeData(
+          canvasColor: AppColors.atollColor,
+          scaffoldBackgroundColor: AppColors.atollColor,
+          primaryColor: AppColors.atollColor,
+          primarySwatch: AppColors.swatchColor,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        initialRoute: Routes.root,
+        onGenerateRoute: (settings) => _getRoute(settings),
       ),
-      initialRoute: Routes.root,
-      onGenerateRoute: (settings) => _getRoute(settings),
     );
   }
 
   Route<dynamic> _getRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.root:
+        return MaterialPageRoute(
+          settings: const RouteSettings(name: Routes.root),
+          builder: (_) => MainScreen(),
+        );
+      case Routes.contacts:
         return MaterialPageRoute(
           settings: const RouteSettings(name: Routes.root),
           builder: (_) => const ContactsScreen(title: 'Contacts'),
