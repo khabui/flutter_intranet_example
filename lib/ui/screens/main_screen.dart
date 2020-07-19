@@ -33,8 +33,8 @@ class MainScreen extends StatelessWidget {
 
   final _currentTab = [
     NewsScreen(),
-    MeetingScreen(),
-    TeamScreen(),
+    const MeetingScreen(title: 'Meeting',),
+    const TeamScreen(title: 'Team',),
     const ContactsScreen(
       title: 'Contacts',
     ),
