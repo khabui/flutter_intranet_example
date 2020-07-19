@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:focused_menu/focused_menu.dart';
 import 'package:focused_menu/modals.dart';
 
-import '../models/random_user_api.dart';
-import '../resources/colors.dart';
-import '../resources/icons.dart';
-import '../resources/text_theme.dart';
+import '../../models/random_user_api.dart';
+import '../../resources/colors.dart';
+import '../../resources/icons.dart';
+import '../../resources/text_theme.dart';
 import 'user_list_tile.dart';
 
 class UserCard extends StatelessWidget {

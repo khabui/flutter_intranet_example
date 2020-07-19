@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../resources/colors.dart';
-import '../resources/icons.dart';
-import '../resources/text_theme.dart';
+import '../../resources/colors.dart';
+import '../../resources/icons.dart';
+import '../../resources/text_theme.dart';
 
 class UserBottomNavigation extends StatelessWidget {
   const UserBottomNavigation({Key key}) : super(key: key);

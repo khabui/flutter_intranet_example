@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import '../resources/colors.dart';
-import '../resources/text_theme.dart';
+import '../../resources/colors.dart';
+import '../../resources/text_theme.dart';
 import 'horizontal_spacing.dart';
 
 class InfoButton extends StatelessWidget {

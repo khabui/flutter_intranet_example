@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'models/api_provider.dart';
-import 'models/random_user_api.dart';
-import 'resources/colors.dart';
-import 'resources/icons.dart';
-import 'resources/text_theme.dart';
-import 'widgets/user_bottom_navigation.dart';
-import 'widgets/user_card.dart';
+import '../../models/api_provider.dart';
+import '../../models/random_user_api.dart';
+import '../../resources/colors.dart';
+import '../../resources/icons.dart';
+import '../../resources/text_theme.dart';
+import '../widgets/user_bottom_navigation.dart';
+import '../widgets/user_card.dart';
 
 class ContactsScreen extends StatelessWidget {
   final String title;
