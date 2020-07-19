@@ -5,6 +5,9 @@ import '../../resources/colors.dart';
 import '../../resources/icons.dart';
 import '../view_models/bottom_navigation_bar_provider.dart';
 import 'contacts_screen.dart';
+import 'meeting_screen.dart';
+import 'news_screen.dart';
+import 'team_screen.dart';
 
 class MainScreen extends StatelessWidget {
   final _tabItems = [
@@ -29,6 +32,9 @@ class MainScreen extends StatelessWidget {
   ];
 
   final _currentTab = [
+    NewsScreen(),
+    MeetingScreen(),
+    TeamScreen(),
     const ContactsScreen(
       title: 'Contacts',
     ),

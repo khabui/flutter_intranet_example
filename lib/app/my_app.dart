@@ -5,8 +5,10 @@ import '../resources/colors.dart';
 import '../resources/values.dart';
 import '../ui/screens/contacts_screen.dart';
 import '../ui/screens/main_screen.dart';
+import '../ui/screens/news_screen.dart';
 import '../ui/screens/profile_screen.dart';
 import '../ui/view_models/bottom_navigation_bar_provider.dart';
+import '../ui/view_models/news_article_list_view_model.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -14,6 +16,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider(
+          create: (_) => NewsArticleListViewModel(),
+        ),
         ChangeNotifierProvider(
           create: (_) => BottomNavigationBarProvider(),
         )
@@ -53,6 +58,11 @@ class MyApp extends StatelessWidget {
           builder: (_) => ProfileScreen(
             user: arguments.user,
           ),
+        );
+      case Routes.newsFeed:
+        return MaterialPageRoute(
+          settings: const RouteSettings(name: Routes.newsFeed),
+          builder: (_) => NewsScreen(),
         );
 //    case Routes.editProfile:
 //      final EditProfileScreenArguments arguments =
