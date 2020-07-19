@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../models/api_provider.dart';
 import '../../models/random_user_api.dart';
+import '../../models/user_repository.dart';
 import '../../resources/colors.dart';
 import '../../resources/icons.dart';
 import '../../resources/text_theme.dart';
@@ -14,8 +14,8 @@ class ContactsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _users = UserApiProvider().fetchUsers(
-      numbers: 10,
+    final _users = UserRepository().fetchUsers(
+      numbers: 20,
     );
 
     return Scaffold(
