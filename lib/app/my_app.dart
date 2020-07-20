@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../resources/colors.dart';
 import '../resources/values.dart';
+import '../ui/screens/article_screen.dart';
 import '../ui/screens/contacts_screen.dart';
 import '../ui/screens/main_screen.dart';
 import '../ui/screens/news_screen.dart';
@@ -63,6 +64,15 @@ class MyApp extends StatelessWidget {
         return MaterialPageRoute(
           settings: const RouteSettings(name: Routes.newsFeed),
           builder: (_) => NewsScreen(),
+        );
+      case Routes.article:
+        final ArticleScreenArguments arguments =
+            settings.arguments as ArticleScreenArguments;
+        return MaterialPageRoute(
+          settings: const RouteSettings(name: Routes.article),
+          builder: (_) => ArticleScreen(
+            article: arguments.article,
+          ),
         );
 //    case Routes.editProfile:
 //      final EditProfileScreenArguments arguments =
