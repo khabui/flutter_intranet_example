@@ -41,6 +41,7 @@ class MyApp extends StatelessWidget {
   }
 
   Route<dynamic> _getRoute(RouteSettings settings) {
+    final args = settings.arguments;
     switch (settings.name) {
       case Routes.root:
         return MaterialPageRoute(
@@ -53,27 +54,27 @@ class MyApp extends StatelessWidget {
           builder: (_) => const ContactsScreen(title: 'Contacts'),
         );
       case Routes.profile:
-        final ProfileScreenArguments arguments =
-            settings.arguments as ProfileScreenArguments;
-        return MaterialPageRoute(
-          builder: (_) => ProfileScreen(
-            user: arguments.user,
-          ),
-        );
+        return args is ProfileScreenArguments
+            ? MaterialPageRoute(
+                builder: (_) => ProfileScreen(
+                  user: args.user,
+                ),
+              )
+            : _errorRoute();
       case Routes.newsFeed:
         return MaterialPageRoute(
           settings: const RouteSettings(name: Routes.newsFeed),
           builder: (_) => NewsScreen(),
         );
       case Routes.article:
-        final ArticleScreenArguments arguments =
-            settings.arguments as ArticleScreenArguments;
-        return MaterialPageRoute(
-          settings: const RouteSettings(name: Routes.article),
-          builder: (_) => ArticleScreen(
-            article: arguments.article,
-          ),
-        );
+        return args is ArticleScreenArguments
+            ? MaterialPageRoute(
+                settings: const RouteSettings(name: Routes.article),
+                builder: (_) => ArticleScreen(
+                  article: args.article,
+                ),
+              )
+            : _errorRoute();
 //    case Routes.editProfile:
 //      final EditProfileScreenArguments arguments =
 //          settings.arguments as EditProfileScreenArguments;
@@ -81,7 +82,20 @@ class MyApp extends StatelessWidget {
 //        builder: (_) => EditProfileScreen(user: arguments.user),
 //      );
       default:
-        throw Exception('Route ${settings.name} is not defined');
+        return _errorRoute();
     }
+  }
+
+  Route<dynamic> _errorRoute() {
+    return MaterialPageRoute(builder: (_) {
+      return Scaffold(
+        appBar: AppBar(
+          title: const Text('Error'),
+        ),
+        body: const Center(
+          child: Text('Error'),
+        ),
+      );
+    });
   }
 }
