@@ -1,11 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_intranet_example/resources/icons.dart';
-import 'package:flutter_intranet_example/resources/text_theme.dart';
-import 'package:flutter_intranet_example/ui/view_models/news_article_view_model.dart';
-import 'package:flutter_intranet_example/ui/widgets/horizontal_spacing.dart';
-import 'package:flutter_intranet_example/ui/widgets/rounded_corner_image.dart';
-import 'package:flutter_intranet_example/ui/widgets/vertical_spacing.dart';
+
+import '../../resources/icons.dart';
+import '../../resources/text_theme.dart';
+import '../view_models/news_article_view_model.dart';
+import '../widgets/horizontal_spacing.dart';
+import '../widgets/rounded_corner_image.dart';
+import '../widgets/vertical_spacing.dart';
 
 class ArticleScreen extends StatelessWidget {
   final NewsArticleViewModel article;

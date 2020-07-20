@@ -3,11 +3,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../models/random_user_api.dart';
-import '../screens/profile_screen.dart';
 import '../../resources/colors.dart';
 import '../../resources/icons.dart';
 import '../../resources/text_theme.dart';
 import '../../resources/values.dart';
+import '../screens/profile_screen.dart';
 import 'horizontal_spacing.dart';
 
 class UserListTile extends StatelessWidget {
