@@ -36,6 +36,8 @@ extension TextStyleExt on TextStyle {
   TextStyle get colorBlack => copyWith(color: Colors.black);
 
   TextStyle get colorWhite => copyWith(color: Colors.white);
+
+  TextStyle get colorGrey => copyWith(color: Colors.grey);
 }
 
 TextTheme createTextTheme() => TextTheme(
