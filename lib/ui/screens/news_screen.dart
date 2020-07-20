@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_intranet_example/resources/colors.dart';
 import 'package:provider/provider.dart';
 
 import '../../resources/text_theme.dart';
@@ -29,8 +30,31 @@ class _NewsScreenState extends State<NewsScreen> {
           style: textTheme(context).heading2.colorWhite,
         ),
       ),
-      body: NewsGrid(
-        articles: listViewModel.articlesViewModels,
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Text(
+                'News',
+                style: textTheme(context).heading2.bold.colorWhite,
+              ),
+            ),
+            Divider(
+              color: AppColors.whiteColor,
+              height: 36.0,
+              thickness: 8,
+              indent: 16.0,
+              endIndent: 16.0,
+            ),
+            Expanded(
+              child: NewsGrid(
+                articles: listViewModel.articlesViewModels,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

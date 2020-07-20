@@ -21,7 +21,7 @@ class NewsGrid extends StatelessWidget {
         final article = articles[index];
         return GridTile(
           footer: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 8.0,),
+            margin: const EdgeInsets.symmetric(horizontal: 16.0,),
             child: Text(
               article.title,
               maxLines: 1,
@@ -31,7 +31,7 @@ class NewsGrid extends StatelessWidget {
           ),
           child: Container(
             margin: const EdgeInsets.symmetric(
-              horizontal: 8.0,
+              horizontal: 12.0,
               vertical: 20.0,
             ),
             child: RoundedCornerImageWidget(
