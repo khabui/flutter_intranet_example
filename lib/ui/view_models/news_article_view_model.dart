@@ -9,7 +9,7 @@ class NewsArticleViewModel {
 
   String get description => _article.description;
 
-  String get publishAt => _article.publishedAt;
+  String get publishedAt => _article.publishedAt;
 
   String get title => _article.title;
 
