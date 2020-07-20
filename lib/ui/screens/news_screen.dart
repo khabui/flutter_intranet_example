@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_intranet_example/resources/colors.dart';
 import 'package:provider/provider.dart';
 
+import '../../resources/colors.dart';
 import '../../resources/text_theme.dart';
 import '../view_models/news_article_list_view_model.dart';
 import '../widgets/news_grid.dart';
