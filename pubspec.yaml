@@ -13,19 +13,18 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^0.1.3
-  cached_network_image: ^2.2.0+1
-  dio: 3.0.9
+  cached_network_image: ^2.3.1
+  dio: ^3.0.10
   focused_menu: ^1.0.1
   google_fonts: ^1.1.0
   intl: ^0.16.1
-  provider: ^4.3.1
-  url_launcher: ^5.5.0
+  lint: ^1.2.0
+  provider: ^4.3.2+2
+  url_launcher: ^5.5.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-  lint: ^1.2.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
