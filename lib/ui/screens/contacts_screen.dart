@@ -27,7 +27,7 @@ class ContactsScreen extends StatelessWidget {
         ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               AppIcons.menuIcon,
               color: AppColors.whiteColor,
             ),
@@ -40,7 +40,6 @@ class ContactsScreen extends StatelessWidget {
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
-              scrollDirection: Axis.vertical,
               shrinkWrap: true,
               itemCount: snapshot.data.length as int,
               itemBuilder: (BuildContext context, int index) {

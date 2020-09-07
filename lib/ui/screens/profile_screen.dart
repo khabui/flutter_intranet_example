@@ -59,11 +59,11 @@ class ProfileScreen extends StatelessWidget {
               child: ClipOval(
                 child: CachedNetworkImage(
                   imageUrl: user.getAvatarUrl() ?? "",
-                  placeholder: (context, url) => Icon(
+                  placeholder: (context, url) => const Icon(
                     AppIcons.accountCircleIcon,
                     size: 128.0,
                   ),
-                  errorWidget: (context, url, error) => Icon(
+                  errorWidget: (context, url, error) => const Icon(
                     AppIcons.errorIcon,
                     size: 128.0,
                   ),
@@ -85,11 +85,9 @@ class ProfileScreen extends StatelessWidget {
               indicator: BoxDecoration(
                   border: Border.all(
                     color: AppColors.greyColor300,
-                    width: 1.0,
-                    style: BorderStyle.solid,
                   ),
                   borderRadius: BorderRadius.circular(8.0)),
-              tabs: <Widget>[
+              tabs: const <Widget>[
                 Tab(
                   icon: Icon(
                     AppIcons.accountCircleIcon,

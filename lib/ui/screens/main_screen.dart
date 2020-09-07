@@ -11,30 +11,34 @@ import 'team_screen.dart';
 
 class MainScreen extends StatelessWidget {
   final _tabItems = [
-    BottomNavigationBarItem(
+    const BottomNavigationBarItem(
       icon: Icon(AppIcons.homeIcon),
-      title: const Text('Home'),
+      title: Text('Home'),
     ),
-    BottomNavigationBarItem(
+    const BottomNavigationBarItem(
       icon: Icon(AppIcons.meetingIcon),
-      title: const Text('Meeting'),
+      title: Text('Meeting'),
     ),
-    BottomNavigationBarItem(
+    const BottomNavigationBarItem(
       icon: Icon(AppIcons.teamIcon),
-      title: const Text(
+      title: Text(
         'Team',
       ),
     ),
-    BottomNavigationBarItem(
+    const BottomNavigationBarItem(
       icon: Icon(AppIcons.contactIcon),
-      title: const Text('Contact'),
+      title: Text('Contact'),
     ),
   ];
 
   final _currentTab = [
     NewsScreen(),
-    const MeetingScreen(title: 'Meeting',),
-    const TeamScreen(title: 'Team',),
+    const MeetingScreen(
+      title: 'Meeting',
+    ),
+    const TeamScreen(
+      title: 'Team',
+    ),
     const ContactsScreen(
       title: 'Contacts',
     ),

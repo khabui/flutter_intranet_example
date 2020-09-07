@@ -40,7 +40,7 @@ extension TextStyleExt on TextStyle {
   TextStyle get colorGrey => copyWith(color: Colors.grey);
 }
 
-TextTheme createTextTheme() => TextTheme(
+TextTheme createTextTheme() => const TextTheme(
       bodyText1: TextStyle(fontWeight: FontWeight.normal),
     );
 

@@ -28,11 +28,11 @@ class UserListTile extends StatelessWidget {
         child: ClipOval(
           child: CachedNetworkImage(
             imageUrl: user.getAvatarUrl() ?? "",
-            placeholder: (context, url) => Icon(
+            placeholder: (context, url) => const Icon(
               AppIcons.accountCircleIcon,
               size: 56.0,
             ),
-            errorWidget: (context, url, error) => Icon(
+            errorWidget: (context, url, error) => const Icon(
               AppIcons.errorIcon,
               size: 56.0,
             ),
@@ -45,7 +45,7 @@ class UserListTile extends StatelessWidget {
       ),
       subtitle: Row(
         children: <Widget>[
-          Icon(
+          const Icon(
             AppIcons.emailIcon,
             color: AppColors.whiteColor30,
           ),
@@ -69,7 +69,7 @@ class UserListTile extends StatelessWidget {
             arguments: ProfileScreenArguments(user: user),
           );
         },
-        icon: Icon(
+        icon: const Icon(
           AppIcons.rightArrowIcon,
           color: AppColors.whiteColor,
           size: 28.0,

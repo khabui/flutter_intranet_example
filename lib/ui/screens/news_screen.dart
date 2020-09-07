@@ -41,7 +41,7 @@ class _NewsScreenState extends State<NewsScreen> {
                 style: textTheme(context).heading2.bold.colorWhite,
               ),
             ),
-            Divider(
+            const Divider(
               color: AppColors.whiteColor,
               height: 36.0,
               thickness: 8,

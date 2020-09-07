@@ -28,7 +28,7 @@ class UserCard extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
           ),
           onPressed: () {},
-          trailingIcon: Icon(AppIcons.emailIcon),
+          trailingIcon: const Icon(AppIcons.emailIcon),
         ),
         FocusedMenuItem(
           title: Text(
@@ -36,7 +36,7 @@ class UserCard extends StatelessWidget {
             style: textTheme(context).bodyMedium.colorBlack,
           ),
           onPressed: () {},
-          trailingIcon: Icon(AppIcons.openIcon),
+          trailingIcon: const Icon(AppIcons.openIcon),
         ),
         FocusedMenuItem(
           title: Text(
@@ -44,7 +44,7 @@ class UserCard extends StatelessWidget {
             style: textTheme(context).bodyMedium.colorBlack,
           ),
           onPressed: () {},
-          trailingIcon: Icon(AppIcons.shareIcon),
+          trailingIcon: const Icon(AppIcons.shareIcon),
         ),
       ],
       child: Container(

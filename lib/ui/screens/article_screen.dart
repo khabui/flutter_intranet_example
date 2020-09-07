@@ -17,10 +17,11 @@ class ArticleScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         centerTitle: true,
         title: Row(
           children: <Widget>[
-            Icon(
+            const Icon(
               AppIcons.accountCircleIcon,
               size: 24.0,
             ),
@@ -34,7 +35,7 @@ class ArticleScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(
+                  const Text(
                     'Author',
                     style: TextStyle(
                       color: Colors.grey,
@@ -74,7 +75,7 @@ class ArticleScreen extends StatelessWidget {
                 ),
                 Text(
                   article.title,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 24,
                     wordSpacing: 3,
